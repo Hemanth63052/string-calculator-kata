@@ -6,6 +6,4 @@ def add(numbers_str: str) -> int:
     actual_numbers = [int(each_num) for each_num in numbers_str.split(",")]
     return sum(actual_numbers)
 
-print(add(""))
-print(add("1"))
-print(add("1,2"))
+print(add("1,3,6,7"))
