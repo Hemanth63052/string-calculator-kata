@@ -50,11 +50,14 @@ def add(numbers: str) -> int:
     pattern = "|".join(map(re.escape, delimiters))
     parts = re.split(pattern, numbers)
     values = []
+    negative_vals = []
     for each_num in parts:
         if each_num and int(each_num)>=0:
             values.append(int(each_num))
         else:
-            raise ValueError(f"negative numbers not allowed: {each_num}")
+            negative_vals.append(each_num)
+    if negative_vals:
+        raise ValueError(f"negative numbers not allowed: {",".join(negative_vals)}")
 
     return sum(values)
 
